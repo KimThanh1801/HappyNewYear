@@ -1,0 +1,179 @@
+main {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.5s ease-in-out;
+  overflow: hidden; /* Hide overflowing flowers */
+}
+
+/* Animation for the main container */
+.app-container {
+  background-color: rgba(0, 0, 0, 0.65);
+  padding: 2rem 3rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.card {
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 15px;
+  color: #fff;
+  transition: background 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.3);
+}
+
+.card h1 {
+  font-family: 'Great Vibes', cursive;
+  color: #FFD700; /* Gold */
+  font-size: 4.5rem;
+  font-weight: normal;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 1.1rem;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+/* New Background styles */
+.card.bg1 { background: linear-gradient(135deg, #d32f2f, #7b1818); } /* Deep Red */
+.card.bg2 { background: linear-gradient(135deg, #ff8f00, #c56000); } /* Vibrant Orange */
+.card.bg3 { background: linear-gradient(135deg, #673ab7, #311b92); } /* Royal Purple */
+
+
+.controls {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.controls textarea {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-family: inherit;
+  font-size: 1rem;
+  min-height: 80px;
+  resize: vertical;
+  transition: background 0.3s, border 0.3s;
+}
+
+.controls textarea:focus {
+  background: rgba(255,255,255,0.2);
+  border-color: #FFD700;
+  outline: none;
+}
+
+.controls label {
+  font-weight: 500;
+  font-size: 1.1rem;
+  text-align: left;
+  margin-bottom: -0.5rem;
+}
+
+.color-swatch {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+.color-swatch.bg1 { background: linear-gradient(135deg, #d32f2f, #7b1818); }
+.color-swatch.bg2 { background: linear-gradient(135deg, #ff8f00, #c56000); }
+.color-swatch.bg3 { background: linear-gradient(135deg, #673ab7, #311b92); }
+
+.background-options {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+button {
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #FFC107; /* Amber */
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+button:hover {
+  background-color: #FFD54F;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Flower Animations */
+.flower-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.flower {
+  position: absolute;
+  top: -10%;
+  font-size: 2rem;
+  color: #ffc0cb; /* Pink for peach blossoms */
+  animation: fall 10s linear infinite;
+}
+
+.flower.mai {
+  color: #ffeeab; /* Yellow for apricot blossoms */
+}
+
+@keyframes fall {
+  0% {
+    top: -10%;
+    transform: translateX(0) rotate(0deg);
+  }
+  100% {
+    top: 110%;
+    transform: translateX(100px) rotate(360deg);
+  }
+}
